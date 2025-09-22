@@ -14,4 +14,7 @@
 .terraformrc
 terraform.rc
 
+*.tfstate
+*.tfstate.*
+
 ./idea
