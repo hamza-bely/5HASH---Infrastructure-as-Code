@@ -1,5 +1,11 @@
+resource "random_string" "server_suffix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
 resource "azurerm_mysql_flexible_server" "db" {
-  name                   = "prestashop-db-${var.environment}"
+  name                   = "prestashop-db-${var.environment}-${random_string.server_suffix.result}"
   location               = "francecentral"
   resource_group_name    = var.resource_group_name
   administrator_login    = var.admin_user
@@ -7,6 +13,11 @@ resource "azurerm_mysql_flexible_server" "db" {
   sku_name = "B_Standard_B1ms"
   version                = "8.0.21"
 
+  # Configuration SSL pour autoriser les connexions non sécurisées
+  # ATTENTION: En production, utilisez toujours SSL !
+  backup_retention_days = 7
+  geo_redundant_backup_enabled = false
+  
   storage {
     size_gb = 32
   }
@@ -14,6 +25,14 @@ resource "azurerm_mysql_flexible_server" "db" {
   tags = {
     environment = var.environment
   }
+}
+
+# Configuration pour désactiver require_secure_transport
+resource "azurerm_mysql_flexible_server_configuration" "require_secure_transport" {
+  name                = "require_secure_transport"
+  resource_group_name = var.resource_group_name
+  server_name         = azurerm_mysql_flexible_server.db.name
+  value               = "OFF"
 }
 
 
