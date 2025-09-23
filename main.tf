@@ -1,6 +1,10 @@
 provider "azurerm" {
-  features {}
-  
+  features {
+
+
+  }
+      subscription_id = "98986790-05f9-4237-b612-4814a09270dd"
+
   # Configuration pour Azure for Students
   # L'ID de subscription sera lu depuis la variable d'environnement ARM_SUBSCRIPTION_ID
   # ou automatiquement détecté via Azure CLI

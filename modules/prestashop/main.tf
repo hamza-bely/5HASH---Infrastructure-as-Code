@@ -1,3 +1,9 @@
+resource "random_string" "server_suffix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
 resource "azurerm_container_group" "prestashop" {
   name                = "prestashop-container"
   location            = var.location
@@ -23,8 +29,10 @@ resource "azurerm_container_group" "prestashop" {
     }
   }
 
+
+
   ip_address_type = "Public"
-  dns_name_label  = "prestashop-${var.environment}"
+  dns_name_label  = "prestashop-${var.environment}-${random_string.server_suffix.result}"
 
   image_registry_credential {
     server   = "index.docker.io"
