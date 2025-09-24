@@ -73,26 +73,26 @@ terraform apply -var-file="prod/prod.tfvars"
 
 ```
 .
-├── main.tf                 # Configuration principale
-├── variables.tf            # Déclaration des variables
+├── main.tf              
+├── variables.tf         
 ├── modules/ 
        ├── database          
        └── prestashgop                
 ├── dev/
     └──├── dev.tfvars
-       ├── main.tf                 # Configuration principale
-       ├── output.tf                 # Configuration principale
-       └── variables.tf  # Variables pour l'environnement DEV
+       ├── main.tf             
+       ├── output.tf              
+       └── variables.tf  
 ├── staging/
     └──├── staging.tfvars  
-       ├── main.tf                 # Configuration principale
-       ├── output.tf                 # Configuration principale
-       └── variables.tf  # Variables pour l'environnement DEV
+       ├── main.tf                
+       ├── output.tf                 
+       └── variables.tf  
 └── prod/
-    └──├── prod.tfvars       # Variables pour l'environnement PROD
-       ├── main.tf                 # Configuration principale
-       ├── output.tf                 # Configuration principale
-       └── variables.tf  # Variables pour l'environnement DEV
+    └──├── prod.tfvars       
+       ├── main.tf               
+       ├── output.tf                 
+       └── variables.tf  
 ```
 
 Chaque fichier `.tfvars` contient les variables spécifiques à l'environnement :
