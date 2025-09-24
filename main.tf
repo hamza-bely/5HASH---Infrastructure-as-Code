@@ -1,10 +1,6 @@
 provider "azurerm" {
-  features {
-
-
-  }
-      subscription_id = "98986790-05f9-4237-b612-4814a09270dd"
-
+  features {}
+  //subscription_id = "98986790-05f9-4237-b612-4814a09270dd"
   # Configuration pour Azure for Students
   # L'ID de subscription sera lu depuis la variable d'environnement ARM_SUBSCRIPTION_ID
   # ou automatiquement détecté via Azure CLI
@@ -14,7 +10,6 @@ provider "azurerm" {
 }
 
 provider "random" {
-  # Provider pour générer des chaînes aléatoires
 }
 
 resource "azurerm_resource_group" "rg" {
@@ -41,9 +36,11 @@ module "prestashop" {
   db_user             = var.db_user
   db_password         = var.db_password
   environment         = var.environment
+  dockerhub_username = var.dockerhub_username
+  dockerhub_password = var.dockerhub_password
 }
 
-# Outputs pour les informations de connexion
+
 output "database_connection_info" {
   description = "Informations de connexion à la base de données"
   value = {

@@ -1,0 +1,13 @@
+resource_group_name   = "taylor-shift-rg-staging"
+db_admin_user         = "prestashop_admin"
+db_admin_password     = "PasswordStaging123!"
+db_host               = "staging-db-server.database.windows.net"
+db_name               = "prestashop_staging"
+db_user               = "admin_staging"
+db_password           = "PasswordStaging123!"
+environment           = "staging"
+dockerhub_username    = "hampza"
+dockerhub_password    = "Bandello31!!!"
+cpu_cores             = 2
+location              = "francecentral"
+memory_gb             = 4

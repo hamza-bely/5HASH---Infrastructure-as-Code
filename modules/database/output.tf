@@ -1,5 +1,5 @@
 output "db_host" {
-  description = "FQDN du serveur de base de données MySQL"
+  description = "FQDN du serveur de base de données"
   value = azurerm_mysql_flexible_server.db.fqdn
 }
 

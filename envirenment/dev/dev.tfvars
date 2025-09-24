@@ -1,0 +1,9 @@
+environment        = "dev"
+location           = "France Central"
+resource_group_name = "rg-taylorshift-dev"
+db_host            = "dev-db-server.database.windows.net"
+db_name            = "dev-db"
+db_user            = "dev_admin"
+db_password        = "devPassword123"
+cpu_cores          = 1
+memory_gb          = 2
