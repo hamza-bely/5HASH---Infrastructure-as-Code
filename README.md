@@ -141,12 +141,3 @@ http://prestashop-<ton-label-dns>.azurecontainer.io/admin13
 
 > **⚠️ Important** : Remplace `<ton-label-dns>` par le nom DNS configuré dans tes variables Terraform.
 
-## 🔒 Considérations de Sécurité
-
-### Pour la Production :
-- **Volume persistant** : Monte un Azure File Share pour conserver les données
-- **HTTPS** : Configure SSL/TLS avec Azure Application Gateway
-- **Sauvegarde** : Active les sauvegardes automatiques de la base de données
-- **Monitoring** : Configure Azure Monitor et les alertes
-
-
