@@ -3,9 +3,9 @@
 Ce projet déploie une infrastructure complète sur Azure pour héberger une application PrestaShop avec une base de données dédiée. L'infrastructure est gérée avec **Terraform** et utilise des modules pour organiser le déploiement.
 
 Équipe du Projet
-- ** Hamza Belyahiaoui - Développeur Full Stack
-- ** Saad Chabba - Développeur Full Stack
-- ** Constant Alberola - Développeur Full Stack
+- ** Hamza Belyahiaoui** - Développeur Full Stack
+- ** Saad Chabba** - Développeur Full Stack
+- ** Constant Alberola** - Développeur Full Stack
 
 
 ## 📋 Architecture
